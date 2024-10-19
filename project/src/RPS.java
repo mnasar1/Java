@@ -20,7 +20,7 @@ public class RPS {
            if (!user.equals(o1)&& !user.equals(o2) && !user.equals(o3)) {
                System.out.println("invalid move");
 
-               switch ()
+               System.out.println("computer move" + comp);
 
 
                }
