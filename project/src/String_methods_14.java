@@ -21,8 +21,8 @@ public class String_methods_14 {
 //        System.out.println(nonTrimmed);
 //        System.out.println(Trimmedstring);
 //
-//        System.out.println(name.substring(1,5));
-//        System.out.println(name.substring(2));
+        System.out.println(name.substring(1,5));
+        System.out.println(name.substring(2));
 //
 //        System.out.println(name.replace('r', 'p'));
 //        System.out.println(name.replace("r" , "ier"));
@@ -33,6 +33,9 @@ public class String_methods_14 {
         System.out.println(name.indexOf("r"));
         System.out.println(Modifiedname.indexOf("rry",7));
         System.out.println(Modifiedname.lastIndexOf("r",4));
+        System.out.println(name.equals("harry"));
+        System.out.println(name.equalsIgnoreCase("haRRy"));
+
 
 
 //        System.out.println(value);
