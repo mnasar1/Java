@@ -4,8 +4,12 @@ public class Loops {
     public static void main(String[] args) {
         System.out.println("Loops");
 
-        while (true){
-            System.out.println();
+        int i =0;
+
+        while (i<20){
+            System.out.println(i++);
         }
+        System.out.println("");
+        System.out.println(i);
     }
 }
