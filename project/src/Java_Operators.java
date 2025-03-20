@@ -37,6 +37,8 @@ public class Java_Operators {
 
         System.out.println(100>99 || 99<69);
 
+        System.out.println(199>78 || 233<599);
+
 
 
 
