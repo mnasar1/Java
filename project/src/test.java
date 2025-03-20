@@ -35,6 +35,11 @@ public class test {
 
         }else
             System.out.println("odd number");
+        if (a>2) {
+            System.out.println("yes");
+        }else
+            System.out.println("no");
+        }
 
     }
-}
+
