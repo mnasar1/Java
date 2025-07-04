@@ -19,15 +19,17 @@ h2 {
 
 /* Style for buttons */
 button {
-  background-color: #27ae60; /* Green */
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  margin: 10px;
-  font-size: 1.2em;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+
+background-color: #000000; /* Black */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
 }
 
 button:hover {
