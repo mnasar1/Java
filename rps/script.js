@@ -1,5 +1,3 @@
-// script.js
-
 function play(userChoice) {
   const choices = ['rock', 'paper', 'scissors'];
   const roboChoice = choices[Math.floor(Math.random() * 3)];
@@ -19,4 +17,10 @@ function play(userChoice) {
   }
 
   document.getElementById('result').innerText = result;
+  document.getElementById('play-again').style.display = 'inline-block';
+}
+
+function resetGame() {
+  document.getElementById('result').innerText = '';
+  document.getElementById('play-again').style.display = 'none';
 }
