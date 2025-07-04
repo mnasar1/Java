@@ -1,0 +1,40 @@
+name: Deploy Static Site to EC2
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Build Docker image
+      run: docker build -t rps-static-site ./rps
+
+    - name: Save Docker image to tar
+      run: docker save rps-static-site -o rps-static-site.tar
+
+    - name: Copy image to EC2
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        source: "rps-static-site.tar"
+        target: "~/"
+
+    - name: Deploy on EC2
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        script: |
+          docker load -i rps-static-site.tar
+          docker stop rps || true
+          docker rm rps || true
+          docker run -d -p 80:80 --name rps rps-static-site
